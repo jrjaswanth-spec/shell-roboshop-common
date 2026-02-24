@@ -69,6 +69,8 @@ systemctl daemon-reload
 VALIDATE $? "daemon reload"
 systemctl enable $app_name &>>$LOG_FILE
 VALIDATE $? "enable $app_name"
+systemctl start $app_name
+VALIDATE $? "start $app_name"
 }
 
 app_restart(){
