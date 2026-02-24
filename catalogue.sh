@@ -7,13 +7,7 @@ app_setup
 nodejs_setup
 systemd_setup
 
-id roboshop &>>$LOG_FILE
-if [ $? -ne 0 ]; then
-useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop &>>$LOG_FILE
-VALIDATE $? "creating system user" 
-else
-     echo -e "user already exist....$Y SKIPPING $N"
-fi
+
  
 
 cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
